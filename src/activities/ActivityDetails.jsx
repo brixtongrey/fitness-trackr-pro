@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useNavigate, useOutletContext } from "react-router-dom";
+import { useParams, useNavigate, useOutletContext } from "react-router";
 import { deleteActivity } from "../api/activities";
 
 function ActivityDetails() {
