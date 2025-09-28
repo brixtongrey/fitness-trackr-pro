@@ -21,11 +21,16 @@ export function AuthProvider({ children }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(credentials),
     });
-    const result = await response.json();
+    let result = null;
+    try {
+      result = await response.json();
+    } catch (error) {}
+
     if (!response.ok) {
-      throw Error(result.message);
+      throw new Error(result?.message || "Registration failed");
     }
-    setToken(result.token);
+
+    setToken(result?.token || null);
   };
 
   const login = async (credentials) => {
@@ -34,11 +39,17 @@ export function AuthProvider({ children }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(credentials),
     });
-    const result = await response.json();
+
+    let result = null;
+    try {
+      result = await response.json();
+    } catch (error) {}
+
     if (!response.ok) {
-      throw Error(result.message);
+      throw new Error(result?.message || "Login failed");
     }
-    setToken(result.token);
+
+    setToken(result?.token || null);
   };
 
   const logout = () => setToken(null);
