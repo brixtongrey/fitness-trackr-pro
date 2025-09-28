@@ -1,5 +1,7 @@
 import { useAuth } from "../auth/AuthContext";
-import { Link } from "react-router";
+import { NavLink } from "react-router";
+
+const navClass = ({ isActive }) => "link" + (isActive ? " active" : "");
 
 /** Navbar with site navigation links */
 export default function Navbar() {
@@ -9,13 +11,19 @@ export default function Navbar() {
     <header>
       <p>Fitness Trackr</p>
       <nav>
-        <Link to="/activities">Activities</Link>
+        <NavLink to="/activities" className={navClass}>
+          Activities
+        </NavLink>
         {token ? (
           <button onClick={logout}>Log out</button>
         ) : (
           <>
-            <Link to="/register">Register</Link>
-            <Link to="/login">Login</Link>
+            <NavLink to="/register" className={navClass}>
+              Register
+            </NavLink>
+            <NavLink to="/login" className={navClass}>
+              Login
+            </NavLink>
           </>
         )}
       </nav>
