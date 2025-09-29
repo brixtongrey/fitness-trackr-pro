@@ -18,8 +18,8 @@ export default function App() {
         <Route index element={<ActivitiesPage />} />
 
         <Route path="activities" element={<ActivitiesPage />}>
-          <Route path=":activityId" element={<ActivityDetails />} />
-        </Route>
+        <Route path=":activityId" element={<ActivityDetails />} />
+      </Route>
 
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
