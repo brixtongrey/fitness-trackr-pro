@@ -14,6 +14,11 @@ export default function Navbar() {
         <NavLink to="/activities" className={navClass}>
           Activities
         </NavLink>
+
+      <NavLink to="/routines" className={navClass}>
+      Routines
+      </NavLink>
+
         {token ? (
           <button onClick={logout}>Log out</button>
         ) : (

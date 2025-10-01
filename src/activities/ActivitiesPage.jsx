@@ -1,4 +1,4 @@
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 import { getActivities } from "../api/activities";
 import { Outlet } from "react-router";
 import { useAuth } from "../auth/AuthContext";

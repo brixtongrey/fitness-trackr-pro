@@ -7,7 +7,7 @@ import ActivityDetails from "./activities/ActivityDetails.jsx";
 import { Routes, Route, Link, NavLink } from "react-router";
 
 import RoutinesPage from "./routines/RoutinesPage.jsx";
-import RoutineDetails from "./routines/RoutineDetails"
+import RoutineDetails from "./routines/RoutineDetails.jsx"
 
 /**
  * Fitness Trackr is a platform where fitness enthusiasts can share their workouts and
@@ -23,6 +23,10 @@ export default function App() {
         <Route path="activities" element={<ActivitiesPage />}>
         <Route path=":activityId" element={<ActivityDetails />} />
       </Route>
+
+        <Route path="routines" element={<RoutinesPage />}>
+          <Route path=":routineId" element={<RoutineDetails />} />
+        </Route>
 
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
