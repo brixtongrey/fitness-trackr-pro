@@ -6,6 +6,9 @@ import Layout from "./layout/Layout.jsx";
 import ActivityDetails from "./activities/ActivityDetails.jsx";
 import { Routes, Route, Link, NavLink } from "react-router";
 
+import RoutinesPage from "./routines/RoutinesPage.jsx";
+import RoutineDetails from "./routines/RoutineDetails"
+
 /**
  * Fitness Trackr is a platform where fitness enthusiasts can share their workouts and
  * discover new routines. Anyone can browse the site and make an account, and users with an
