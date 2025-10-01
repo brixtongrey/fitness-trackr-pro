@@ -21,7 +21,6 @@ function RoutineDetails() {
     async function fetchActivities() {
       try {
         const data = await getActivities();
-        console.log("Activities fetched:", data);
         setActivities(data);
         if (data.length > 0) setActivityId(data[0].id);
       } catch (e) {
@@ -91,12 +90,10 @@ function RoutineDetails() {
         <p>No sets yet. Add one below!</p>
       )}
 
-
       {token && (
         <>
           <h3>Add a new set</h3>
           <form onSubmit={handleAddSet}>
-                {console.log("Rendering dropdown with activities:", activities)}
             <label>
               Activity:
               <select
